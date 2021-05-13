@@ -1,6 +1,6 @@
 package com.hstiv.avaj;
 
-import java.util.Arrays;
+import java.util.*;
 import java.io.*;
 import java.lang.*;
 import com.hstiv.avaj.WeatherTower;
@@ -22,10 +22,10 @@ public class Simulator {
                 
 				sval = line.split(" ");
                 
-				if (!ids.isEmpty) {
+				if (!ids.isEmpty()) {
 					for (int i = 0; i < ids.size(); i++) {
-						if (ids[i].equals(sval[1]))
-							throw new Exception("(" + sval[1] + ") is unique ID!");
+						if (ids.get(i).equals(sval[1]))
+							throw new Exception("(" + sval[1] + ") is NOT unique ID!");
 					}
                 }
                 
