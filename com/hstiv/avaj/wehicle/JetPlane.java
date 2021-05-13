@@ -1,6 +1,6 @@
-package com.hstiv.avaj_launcher.wehicle;
+package com.hstiv.avaj.wehicle;
 
-import com.hstiv.avaj_launcher.WeatherTower;
+import com.hstiv.avaj.WeatherTower;
 
 public class JetPlane extends Aircraft implements Flyable {
 
@@ -8,7 +8,6 @@ public class JetPlane extends Aircraft implements Flyable {
 
     public JetPlane(String name, Coordinates coordinates) {
         super(name, coordinates);
-        System.out.println("JetPlane@" + name + " has been created.");
     }
 
     private void updateCoordinates(String weather) {
@@ -27,7 +26,7 @@ public class JetPlane extends Aircraft implements Flyable {
         }
         else if (weather.equals("SNOW")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 7);
-            if (this.coordinates.getHeight() != 0)
+            if (this.coordinates.getHeight() > 0)
                 System.out.println("JetPlane#" + this.name + "(" + this.id + "): Just winter, huh?");
         }
         if (this.coordinates.getHeight() > 100)
@@ -40,9 +39,9 @@ public class JetPlane extends Aircraft implements Flyable {
 
         if (this.coordinates.getHeight() <= 0) {
             System.out.println("JetPlane#" + this.name + "(" + this.id + "): Landing... Coordinates:" +
-                    " lo: " + this.coordinates.getLongitude() +
-                    " la: " + this.coordinates.getLatitude() +
-                    " h: 0"
+                    " lo:=" + this.coordinates.getLongitude() +
+                    " la:=" + this.coordinates.getLatitude() +
+                    " h:=0"
             );
             this.weatherTower.unregister(this);
         }

@@ -1,6 +1,6 @@
-package com.hstiv.avaj_launcher.wehicle;
+package com.hstiv.avaj.wehicle;
 
-import com.hstiv.avaj_launcher.WeatherTower;
+import com.hstiv.avaj.WeatherTower;
 
 public interface Flyable {
     void updateConditions();

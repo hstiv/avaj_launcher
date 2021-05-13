@@ -1,6 +1,6 @@
-package com.hstiv.avaj_launcher.wehicle;
+package com.hstiv.avaj.wehicle;
 
-import com.hstiv.avaj_launcher.WeatherTower;
+import com.hstiv.avaj.WeatherTower;
 import java.lang.*;
 
 public class Helicopter extends Aircraft implements Flyable {
@@ -9,7 +9,6 @@ public class Helicopter extends Aircraft implements Flyable {
 
     protected Helicopter(String name, Coordinates coordinates) {
         super(name, coordinates);
-        System.out.println("Helicopter@" + name + " has been created.");
     }
 
     private void updateCoordinates(String weather) {
@@ -28,22 +27,24 @@ public class Helicopter extends Aircraft implements Flyable {
         }
         else if (weather.equals("SNOW")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 12);
-            if (this.coordinates.getHeight() != 0)
+            if (this.coordinates.getHeight() > 0)
                 System.out.println("Helicopter#" + this.name + "(" + this.id + "): Just winter, huh?");
         }
         if (this.coordinates.getHeight() > 100)
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), 100);
+
     }
 
     @Override
     public void updateConditions() {
+
         this.updateCoordinates(this.weatherTower.getWeather(this.coordinates));
 
-        if (this.coordinates.getHeight() == 0) {
+        if (this.coordinates.getHeight() <= 0) {
             System.out.println("Helicopter#" + this.name + "(" + this.id + "): Landing... Coordinates:" +
-                    " lo: " + this.coordinates.getLongitude() +
-                    " la: " + this.coordinates.getLatitude() +
-                    " h: 0"
+                    " lo:=" + this.coordinates.getLongitude() +
+                    " la:=" + this.coordinates.getLatitude() +
+                    " h:=0"
             );
             this.weatherTower.unregister(this);
         }

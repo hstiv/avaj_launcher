@@ -1,7 +1,7 @@
-package com.hstiv.avaj_launcher;
+package com.hstiv.avaj;
 
 import java.util.*;
-import com.hstiv.avaj_launcher.wehicle.Flyable;
+import com.hstiv.avaj.wehicle.Flyable;
 
 public class Tower {
 

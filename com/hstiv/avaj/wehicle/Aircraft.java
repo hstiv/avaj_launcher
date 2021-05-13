@@ -1,4 +1,4 @@
-package com.hstiv.avaj_launcher.wehicle;
+package com.hstiv.avaj.wehicle;
 
 public class Aircraft {
     protected long id;
