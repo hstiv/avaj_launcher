@@ -15,17 +15,29 @@ public class Simulator {
     private static void aircraftLauncher() throws Exception {
         String line;
         String[] sval;
+        ArrayList<String> ids = new ArrayList<String>();
+
         try {
             while ((line = br.readLine()) != null) {
-                sval = line.split(" ");
-                AircraftFactory.newAircraft(
+                
+				sval = line.split(" ");
+                
+				if (!ids.isEmpty) {
+					for (int i = 0; i < ids.size(); i++) {
+						if (ids[i].equals(sval[1]))
+							throw new Exception("(" + sval[1] + ") is unique ID!");
+					}
+                }
+                
+				AircraftFactory.newAircraft(
                         sval[0],
                         sval[1],
                         Integer.parseInt(sval[2]),
                         Integer.parseInt(sval[3]),
                         Integer.parseInt(sval[4]))
                         .registerTower(weatherTower);
-
+                
+				ids.add(sval[1]);
             }
         } catch (Exception e) {
             throw e;
