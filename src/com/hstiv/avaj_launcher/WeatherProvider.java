@@ -1,7 +1,6 @@
 package com.hstiv.avaj_launcher;
 
-import java.lang.*;
-import com.hstiv.application.Coordinates;
+import com.hstiv.avaj_launcher.wehicle.Coordinates;
 
 public class WeatherProvider {
     private static WeatherProvider weatherProvider = new WeatherProvider();

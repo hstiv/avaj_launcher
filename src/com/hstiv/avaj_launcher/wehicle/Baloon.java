@@ -1,8 +1,6 @@
 package com.hstiv.avaj_launcher.wehicle;
 
-import com.hstiv.application.Coordinates;
-import com.hstiv.application.Flyable;
-import com.hstiv.application.WeatherTower;
+import com.hstiv.avaj_launcher.WeatherTower;
 import java.lang.*;
 
 public class Baloon  extends Aircraft implements Flyable {
@@ -15,25 +13,27 @@ public class Baloon  extends Aircraft implements Flyable {
     }
     private void updateCoordinates(String weather) {
 
-        if (weather == "SUN") {
+        if (weather.equals("SUN")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude() + 2, this.coordinates.getLatitude(),  this.coordinates.getHeight() + 4);
             System.out.println("Baloon#" + this.name + "(" + this.id + "): Let's enjoy the good weather and take some pics.");
         }
-        else if (weather == "RAIN") {
+        else if (weather.equals("RAIN")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 5);
             if (this.coordinates.getHeight() != 0)
                 System.out.println("Baloon#" + this.name + "(" + this.id + "): Oh, Zeus must must be fury of Hermes again.");
         }
-        else if (weather == "FOG") {
+        else if (weather.equals("FOG")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 3);
             if (this.coordinates.getHeight() != 0)
                 System.out.println("Baloon#" + this.name + "(" + this.id + "): Tartarus gates are open. Be ready for Titanomachy.");
         }
-        else if (weather == "SNOW") {
+        else if (weather.equals("SNOW")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 15);
             if (this.coordinates.getHeight() != 0)
                 System.out.println("Baloon#" + this.name + "(" + this.id + "): Just winter, huh?");
         }
+        if (this.coordinates.getHeight() > 100)
+            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), 100);
     }
 
     @Override

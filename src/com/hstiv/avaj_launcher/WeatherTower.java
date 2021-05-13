@@ -1,9 +1,6 @@
 package com.hstiv.avaj_launcher;
 
-import com.hstiv.application.Tower;
-import com.hstiv.application.Coordinates;
-import com.hstiv.application.WeatherProvider;
-import java.lang.*;
+import com.hstiv.avaj_launcher.wehicle.Coordinates;
 
 public class WeatherTower extends Tower {
 

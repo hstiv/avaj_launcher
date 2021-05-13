@@ -1,7 +1,7 @@
 package com.hstiv.avaj_launcher;
 
 import java.util.*;
-import com.hstiv.application.Flyable;
+import com.hstiv.avaj_launcher.wehicle.Flyable;
 
 public class Tower {
 
@@ -17,7 +17,7 @@ public class Tower {
 
     protected void conditionsChanged() {
         for (int i = 0; i < observers.size(); i++) {
-            observers.get(i).updateCondition();
+            observers.get(i).updateConditions();
         }
     }
 

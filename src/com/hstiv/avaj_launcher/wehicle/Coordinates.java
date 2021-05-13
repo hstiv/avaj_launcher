@@ -1,4 +1,4 @@
-package com.hstiv.avaj_launcher;
+package com.hstiv.avaj_launcher.wehicle;
 
 public class Coordinates {
     private int longitude;

@@ -1,8 +1,5 @@
 package com.hstiv.avaj_launcher.wehicle;
 
-import com.hstiv.application.Coordinates;
-import java.util.HashMap;
-
 public class Aircraft {
     protected long id;
     protected String name;
